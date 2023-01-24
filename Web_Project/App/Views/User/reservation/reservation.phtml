@@ -1,0 +1,42 @@
+
+  <?php  require_once "./head.phtml"; ?>
+  <?php  require_once "./header.phtml"; ?>
+
+<body>
+    <main class="booking">
+        <h1>RESERVATION</h1>
+        <form  action="ReservationControllers/validationReservation" method="post">
+          <input type="hidden" name ="id" value="<?= $_SESSION["user"] ?>">
+            <label for="guests">Je souhaite réserver pour&nbsp;:</label>
+            <select id="guests" name="guests">
+
+                <option value="one">1 personne</option>
+                <option value="two" selected>2 personnes</option>
+                <option value="three">3 personnes</option>
+                <option value="four">4 personnes</option>
+                <option value="five">5 personnes</option>
+                <option value="six_and_more">6 personnes et plus</option>
+
+            </select>
+
+            <label for="start">Début du séjour&nbsp;:</label>
+            <input type="date" id="start" name="dateStart" value="2023-01-01" min="2023-01-01" max="2023-12-25">
+
+            <label for="end">Fin du séjour&nbsp;:</label>
+            <input type="date" id="end"  name="dateEnd" value="2023-01-02" min="2023-01-02" max="2023-12-31">
+
+            <button type="submit" name="submit">Rechercher</button>
+
+        </form>
+
+        <p>Les clés sont remises dès 11h00.</p>
+        <p>Afin que vous profitiez au mieux de votre séjour, un service de conciergerie et une navette vers la gare de
+        Masaca sont mis à votre disposition.</p>
+        <p>Vous pouvez nous contacter pour plus d'informations.</p>
+
+    </main>
+      <!-- requiered footer -->
+      <?php  require_once  "./footer.phtml" ?>
+        <!-- end required footer -->
+</body>
+</html>

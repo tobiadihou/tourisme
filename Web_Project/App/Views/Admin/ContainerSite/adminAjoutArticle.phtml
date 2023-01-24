@@ -1,0 +1,113 @@
+<!-- requiered header -->
+    <?php  require_once "./head.phtml"; ?>
+<!-- end required header -->
+
+<body>
+<input type="checkbox" class="sidebar__toggle">
+        <div class="sidebar">
+        
+            <div class="sidebar__header">
+
+                <h3 class="brand">
+                    <span class="ti-unlink"></span>
+                    <span>SimpleDash</span>
+                    
+                </h3> 
+                <label for="sidebar__toggle" class="ti-menu-alt"></label>
+            
+            </div>
+
+            <div class="sidebar__menu">
+                
+                <ul>
+                    <li>
+                        <a href="#article">
+                            <span class="ti-home"></span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="ti-face-smile"></span>
+                            <span>Article</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="ti-agenda"></span>
+                            <span>Message page contact</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/ajoutArticle">
+                            <span class="ti-clipboard"></span>
+                            <span>article</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="ti-folder"></span>
+                            <span>Ajouter un image</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="">
+                            <span class="ti-book"></span>
+                            <span>Contacts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="ti-settings"></span>
+                            <span>Account</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span></span>
+                            <span></span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        
+        </div>
+
+    <form action="/AddArticleControllers/articleDb"  method="post" enctype="multipart/form-data">
+            <h2>Ajout article</h2>
+        <div>
+            <input type="text" name="title" placeholder="titre de l'article ">
+        </div>
+
+        <div>
+            <input type="file" name="file" placeholder="image de l'article">
+        </div>
+
+        <div class="rows Signup">
+            <textarea name="content" placeholder="texte" cols="30" rows="10"></textarea>
+        </div>
+
+        <input type="submit" name="submit">
+
+    </form>
+    <form action="/AddArticleControllers/articleDb"  method="post" enctype="multipart/form-data">
+        <h2>modification article</h2>
+        <div>
+            <input type="text" name="title" placeholder="titre de l'article ">
+        </div>
+
+        <div>
+            <input type="file" name="file" placeholder="image de l'article">
+        </div>
+
+        <div class="rows Signup">
+            <textarea name="content" placeholder="texte" cols="30" rows="10"></textarea>
+        </div>
+
+        <input type="submit" name="submit">
+    </form>
+</body>
+</html>

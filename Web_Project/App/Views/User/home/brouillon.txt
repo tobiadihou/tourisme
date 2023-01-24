@@ -1,0 +1,76 @@
+ <body>
+        <main >
+            <section>
+
+            </section>
+            <section>
+                <h2>lorem</h2>
+                <div class='galeries flex'>
+                    <?php
+                        $article_selects=new ContentControllers(); 
+                        $article=$article_selects->homeArticleControllers();
+                        if(count($article) > 0){
+                            foreach ($article as $key => $value) {
+                    ?>
+                        <article>
+                            <h3><?= $article[$key]['article_title']?></h3>
+                            <img src="/ressources/images/<?= $article[$key]["article_img"]; ?>" alt="" >
+
+                            <p><?= $article[$key]['article_content']?></p>
+                        </article>
+                            <?php
+                        }
+                        }else{
+                            echo '<p class="empty">no article   added yet!</p>';
+                        }
+                    ?>
+           
+                </div>
+        </section>
+        
+        </main>*
+
+
+
+
+           <?php
+                    $article_selects=new ContentControllers(); 
+                    $article=$article_selects->homeArticleControllersE();
+                    if(count($article) > 0){
+                        foreach ($article as $key => $value) {
+                ?>
+
+                        <h3><?= $article[$key]['article_title']?></h3>
+                        <img src="/ressources/images/<?= $article[$key]["article_img"]; ?>" alt="" >
+                        <p><?= $article[$key]['article_content']?></p>
+
+                        <?php
+                    }
+                    }else{
+                        echo '<p class="empty">no article   added yet!</p>';
+                    }
+                ?>
+        
+
+          <?php
+                    $images_selects=new ContentControllers(); 
+                    $images=$images_selects->imagePageGallerie();
+                    if(count($images) > 0){
+                        foreach ($images as $key => $value) {
+                     ?>
+                     
+                        <div class="picture">
+                            <img src="/ressources/images/<?= $images[$key]["galleries_img"]; ?>" alt="<?= $images[$key]["galleries_name"]?>" >
+                        </div> 
+                    
+                      
+                    <?php
+                    }
+                    }else{
+                        echo '<p class="empty">no products added yet!</p>';
+                    }
+                    ?>
+
+
+                       <h3><?= $article[$key]['article_title']?></h3>
+                        <img src="/ressources/images/<?= $article[$key]["article_img"]; ?>" alt="" >

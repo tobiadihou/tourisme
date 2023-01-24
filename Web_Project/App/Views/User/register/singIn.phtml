@@ -1,0 +1,33 @@
+
+     
+    <?php  require_once "./head.phtml"; ?>
+    <?php  require_once "./header.phtml"; ?>
+
+   
+  <body>
+    <main>
+        <div class="container">
+          <h1 class="title">Sign in</h1>
+
+              <form action="/SingInControllers/connexion"  class="sign-in-form" method="post">
+
+
+                    <div class="input-field">
+                      <i class="fas fa-envelope"></i>
+                          <input type="email" name="email" placeholder="email" />
+                    </div>
+
+                    
+                    <div class="input-field">
+                          <i class="fas fa-lock"></i>
+                          <input type="password" name="password" placeholder="Password" requiered />
+                    </div>
+                    
+                    <button type="submit" value="Login" name="login" id="submitIn" class="btn solid" >Login</button>
+                    
+              </form>
+        </div>
+    <script src="/ressources/js/app.js"></script>
+</main>
+</body>
+</html>

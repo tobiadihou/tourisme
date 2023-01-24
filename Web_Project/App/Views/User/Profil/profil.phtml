@@ -1,0 +1,43 @@
+<?php  require_once "./head.phtml";?>
+<?php  require_once "./header.phtml";?>
+
+<body>
+   <main class="container">
+     <div class="forms-container">
+        <ul>
+                <div class="input-field">
+                    <li>
+                        Photos de profil: <img src="" alt="#">
+                    </li>
+                </div>
+
+                <div class="input-field">
+                    <li>
+                        Nom d'utilisateur: <?= $_SESSION["name"] ?>
+                    <li>
+                </div>
+
+                <div class="input-field">
+                    <li>
+                        Email: <?= $_SESSION["email"] ?>
+                    </li>
+                </div>
+
+                <div class="input-field">
+                    <li>
+                        tel:  <?= $_SESSION["phone"] ?>
+                    </li>
+                </div>
+
+                <div class="input-field">
+                    <li>
+                        reservation pour le :  <span></span>      au : <span></span>
+                    </li>
+                </div>
+        </ul>
+      </div>
+        
+    </main>
+   
+</body>
+</html>

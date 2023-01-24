@@ -1,0 +1,63 @@
+
+  <?php  require_once "./head.phtml"; ?>
+  <!-- requiered header -->
+  <?php  require_once "./header.phtml"; ?>
+  <!-- end required header -->
+
+  <h2 class="title">Sign up</h2>
+
+    <div class="container">
+
+      <div class="forms-container">
+
+          <form action="/RegisterControllers/validationAction" class="sign-up-form" method="post">
+
+
+                <div class="input-field">
+                      <i class="fas fa-user"></i>
+                      <input type="text" name="fname" placeholder="NOM" requiered />
+                </div>
+                <div class="input-field">
+                      <i class="fas fa-user"></i>
+                      <input type="text" name="lname" placeholder="Prenom" requiered />
+                </div>
+                <div class="input-field">
+                      <i class="fas fa-user"></i>
+                      <input type="text" name="username" placeholder="Username" requiered />
+                </div>
+
+                <div class="input-field">
+                      <i class="fas fa-envelope"></i>
+                      <input type="email" name="email" placeholder="email" />
+                </div>
+
+                <div class="input-field">
+                      <i class="fas fa-phone"></i>
+                      <input type="tel" name="contactNo" placeholder="phone number" requiered >
+                </div>
+
+                <div class="input-field">
+                      <i class="fas fa-lock"></i>
+                      <input type="password" name="password" placeholder="Password" requiered />
+                </div>
+
+                <div class="input-field">
+                      <i class="fas fa-lock"></i>
+                      <input type="password" name="confirm" placeholder="Comfirm Password" requiered />
+                </div>
+
+                <button type="submit" class="btn" name="submit" id="submitUp" value="Sign up" >Sign up</button>
+
+              
+
+          </form>
+
+      </div>
+    </div>
+  <!-- requiered footer -->
+  <?php  require_once  "./footer.phtml" ?>
+        <!-- end required footer -->
+    <script src="/ressources/js/app.js"></script>
+
+  </body>
+</html>

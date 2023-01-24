@@ -1,0 +1,113 @@
+
+	 <!-- requiered header -->
+		<?php  require_once "./head.phtml"; ?>
+	<!-- end required header -->
+</head>
+<body>
+<input type="checkbox" class="sidebar__toggle">
+        <div class="sidebar">
+        
+            <div class="sidebar__header">
+
+                <h3 class="brand">
+                    <span class="ti-unlink"></span>
+                    <span>SimpleDash</span>
+                    
+                </h3> 
+                <label for="sidebar__toggle" class="ti-menu-alt"></label>
+            
+            </div>
+
+            <div class="sidebar__menu">
+                
+                <ul>
+                    <li>
+                        <a href="#article">
+                            <span class="ti-home"></span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/ajoutArticle">
+                            <span class="ti-face-smile"></span>
+                            <span>Article</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="ti-agenda"></span>
+                            <span>Message page contact</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="">
+                            <span class="ti-folder"></span>
+                            <span>Ajouter un image</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="">
+                            <span class="ti-book"></span>
+                            <span>Contacts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="ti-settings"></span>
+                            <span>Account</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span></span>
+                            <span></span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        
+        </div>
+    
+<div class="site-content">
+
+   			<div class="">
+				<div class="main_register_form"> 
+                        
+						<form  action="/ImagesControllers/SendAction" method="post"  enctype="multipart/form-data" id="add_product_admin">
+						 <!-- header-top-navigation -->
+                         <div class="shop-name-header-form">
+                        
+                        </div>
+                          
+						<h1>
+							Ajout de l'image
+						</h1>
+
+						<div >
+							<input type="text" maxlength="24" name="images_titre" placeholder="tire de l'images" id="images_reference" required="required">
+						</div>
+                     
+						<div >
+							<input type="text" maxlength="24" name="images_name" placeholder="Nom de image.." id="images_name" required="required">
+						</div>
+                       
+						<div >
+                        	<input type="file" name="images_file" id="images_file">
+						</div>
+					
+						<input id="submit" type="submit" name="submit" value="Ajouter l'image"  class="button">					
+
+						</form>
+						
+				</div>  <!-- main -->
+
+			</div>
+			
+		</div> <!-- site content -->
+</body>
+</html>
+
