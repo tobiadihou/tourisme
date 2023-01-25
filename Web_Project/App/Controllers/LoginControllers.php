@@ -23,8 +23,6 @@ public function __construct($email, $password) {
     $this->usermodel = new UserConnexion();
     $this->usermodell ;
 
-    // $this->userConnexionSession=new UserConnexionSession();
-
 }
 
 public function verifyControl() {
@@ -41,17 +39,16 @@ public function verifyControl() {
           } elseif($pwd === true && $resultFetchEmail[0]["user_role"] !== "admin") {
 
               $re=$this->usermodel->verifyEmailConn($this->email);
-              echo "Connexion réussi";
                 $userid=$resultFetchEmail[0]["users_id"];
-
+                //profil for user
               $_SESSION["user"]=$userid;
-              $_SESSION["name"]=$resultFetchEmail[0]["users_name"];
+              $_SESSION["name"]=$resultFetchEmail[0]["users_username"];
+              $_SESSION["fname"]=$resultFetchEmail[0]["users_fname"] ;
+              $_SESSION["lname"]=$resultFetchEmail[0]["users_lname"];
               $_SESSION["email"]=$resultFetchEmail[0]["users_email"];
               $_SESSION["phone"]=$resultFetchEmail[0]["users_contactNumber"];
-             
-              
             
-          //  header("Location:/");
+           header("Location:/");
           exit;
           }else {
             echo "Mot de passe incorrect";

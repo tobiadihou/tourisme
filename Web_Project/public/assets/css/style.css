@@ -8,7 +8,29 @@
     --tWhite: #4e4633;
     --main-clr:#333333;
     --lb-album:--lb-album;
-    box-sizing: border-box;
+    --box-sizing: border-box;
+    --main-color: #027581;
+    --color-dark: #1D2231;
+    --text-grey: #8390A2;
+    --text-grey-2: #cccccc;
+    --text-grey-3: #777;
+    --color-white: #ffffff;
+    --color-white-2: #f1f5f9;
+    --color-white-3: #f9fafc;
+    --color-white-4: #efefef;
+    --color-white-5: #DEF7EC;
+    --color-white-6: #F0F6B2;
+    --color-orange: orange;
+    --color-transparent: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
 }
 
 /*****************************************************************
@@ -23,13 +45,13 @@ main {
 header {
   background-color: var(--green);
   color: white;
-  height: 12.5rem;
+  height: 4.1rem;
 }
 
 .header2 {
   display: flex;
   align-items: baseline;
-  height: 12.5rem;
+  height: 2.5rem;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -212,7 +234,7 @@ GITES
     display: flex;
     background-position: center;
     background-size: cover;
-    min-height: 100vh;
+    height: 90vh;
     background-image: url(../../ressources/photos/cabane-4.jpg);
     background-repeat: no-repeat;
     opacity: 0.8;
@@ -509,7 +531,8 @@ RESERVATION
    STYLE BLOG
 ********************************************************************/
 .blog_picture {
-  width: 100%;
+  width: 100vw;
+  height: 70vh;
   margin: 20px 0;
 }
 
@@ -606,34 +629,11 @@ footer img {
  css page admin
 *****************************************************************************/
 
-:root {
-    --main-color: #027581;
-    --color-dark: #1D2231;
-    --text-grey: #8390A2;
-    --text-grey-2: #cccccc;
-    --text-grey-3: #777;
-    --color-white: #ffffff;
-    --color-white-2: #f1f5f9;
-    --color-white-3: #f9fafc;
-    --color-white-4: #efefef;
-    --color-white-5: #DEF7EC;
-    --color-white-6: #F0F6B2;
-    --color-orange: orange;
-    --color-transparent: rgba(0, 0, 0, 0.3);
-}
-
 /* #810202; */
 
-* {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style-type: none;
-    box-sizing: border-box;
-}
 
-#sidebar__toggle{
+
+.sidebar__toggle{
     display: none;
 }
 
@@ -719,7 +719,7 @@ footer img {
     justify-content: space-between;
     border-bottom: 1px solid var(--text-grey-2);
     transition: left 500ms;
-} */
+} 
 
 .search__wrapper {
     display: flex;
@@ -980,7 +980,7 @@ tbody tr:nth-child(even){
     }
 } */
 
-@media only screen and (max-width: 1200px) {
+
     .sidebar {
         width: 60px;
         z-index: 150;
@@ -1036,24 +1036,10 @@ tbody tr:nth-child(even){
         left: 60px;
         width: calc(100% - 60px);
     }
-}
+
 
 @media only screen and (max-width: 860px){
-    .dashboard__cards{
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .card__single {
-        margin-bottom: 1rem;
-    }
-
-    .activity__grid {
-        display: block;
-    }
-
-    .summary {
-        margin-top: 1.5rem;
-    }
+   
 }
 
 @media only screen and (max-width: 600px) {
@@ -1113,4 +1099,20 @@ position: relative;
 font-size: 23px;
 text-align: left;
  }
+
+ .dashboard__cards{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card__single {
+  margin-bottom: 1rem;
+}
+
+.activity__grid {
+  display: block;
+}
+
+.summary {
+  margin-top: 1.5rem;
+}
 }

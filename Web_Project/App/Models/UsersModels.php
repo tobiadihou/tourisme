@@ -61,7 +61,7 @@ namespace App\Models;
             /**
              * $sql
              */
-            $sql = "SELECT * FROM `site_touristique`.users WHERE users_name = ?;";
+            $sql = "SELECT * FROM `site_touristique`.users WHERE users_username = ?;";
             /**
              * $stmt
              */
