@@ -132,6 +132,9 @@ header {
 /*****************************************************************
 header
 ******************************************************************/
+
+
+
 /*****************************************************************
 HOME PAGES
 ******************************************************************/
@@ -141,7 +144,6 @@ HOME PAGES
   vertical-align: middle;
 
 } 
-
 
 .text {
   color: #f2f2f2;
@@ -202,8 +204,7 @@ HOME PAGES
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
-} */ */
-
+} 
 /*****************************************************************
 HOME PAGES
 ******************************************************************/
@@ -258,8 +259,8 @@ h1{
   width: 27%;
   background: var(--green);
   padding: 5vh;
-  margin-top: 25vh;
-  border-radius: 5px;
+  /* margin-top: 25vh;
+  border-radius: 5px; */
   margin: 30vh auto;
   color: blanchedalmond;
   text-align: center;
@@ -284,9 +285,7 @@ h1{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 40%;
-  display: flex;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-  transition: 0.3s;
   flex-direction: column;
   margin-top: 9vh;
   margin-bottom: 9vh;
@@ -929,7 +928,7 @@ tbody tr:nth-child(even){
 .summary__single h5 {
     color: var(--main-color);
     font-size: 1.1rem;
-    margin-bottom: 0rem !important;
+    margin-bottom: 0rem ;
 }
 
 .summary__single small {
@@ -1028,91 +1027,82 @@ tbody tr:nth-child(even){
         margin-left: 60px;
     }
     
-    /* #sidebar__toggle:checked ~ .main__content header {
+   .sidebar__toggle:checked ~ .main__content header {
         left: 60px;
-    } */
+    } 
 
-    #sidebar__toggle:checked ~ .main__content header {
+    .sidebar__toggle:checked ~ .main__content header {
         left: 60px;
         width: calc(100% - 60px);
     }
 
 
-@media only screen and (max-width: 860px){
-   
-}
-
-@media only screen and (max-width: 600px) {
-    .dashboard__cards{
-        grid-template-columns: 100%;
-    }
-}
-
-@media only screen and (max-width: 430px) {
-    main{
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    .search__wrapper {
-        width: 50%;
-    }
-}
 /****************************************************************************
  css page admin
 *****************************************************************************/
+
+
+
 /****************************************************************************
  RESPONSIVE
 *****************************************************************************/
-
 @media screen and (max-width: 768px){
-  .slideshow-container {
-    display: none;
+    .slideshow-container {
+      display: none;
+      position: relative;
+      margin: auto;
+    }
+
+    .nos-gites{
+      display: none;
+      position: relative;
+      margin: auto;
+    }
+
+    .menu_cache ul {
+      flex-wrap: wrap;
+    }
+
+    main h1, select, input, p {
+      width: 50%;
+    }
+
+    main h1, input, textarea {
+      width: 70%;
+    }
+
+    .signature p {
+      margin: 10px 0;
+    }
+
+    .lb-album {
+      width: 166px;
+    }
+
+    .lb-overlay img {
+    max-height: 100%;
+    margin-left: -33px;
     position: relative;
-    margin: auto;
-  }
-  #nos-gites{
-    display: none;
-    position: relative;
-    margin: auto;
-  }
+    }
 
-  main h1, select, input, p {
-    width: 50%;
-  }
+    .lb-overlay div h3 {
+    font-size: 23px;
+    text-align: left;
+    }
 
-  main h1, input, textarea {
-    width: 70%;
-}
- .signature p {
-  margin: 10px 0;
- }
-.lb-album {
-  width: 166px;
- }
- .lb-overlay img {
-max-height: 100%;
-margin-left: -33px;
-position: relative;
- }
-.lb-overlay div h3 {
-font-size: 23px;
-text-align: left;
- }
+    .dashboard__cards{
+      grid-template-columns: repeat(2, 1fr);
+    }
 
- .dashboard__cards{
-  grid-template-columns: repeat(2, 1fr);
-}
+    .card__single {
+      margin-bottom: 1rem;
+    }
 
-.card__single {
-  margin-bottom: 1rem;
-}
+    .activity__grid {
+      display: block;
+    }
 
-.activity__grid {
-  display: block;
-}
-
-.summary {
-  margin-top: 1.5rem;
-}
+    .summary {
+      margin-top: 1.5rem;
+    }
 }
