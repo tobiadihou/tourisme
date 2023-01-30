@@ -12,6 +12,7 @@ use \App\Models\DashboadModels;
  */
 class AdminDashboard extends \Core\Controller {
   
+ 
   public function dashboardAction() {
 
     View::render("Admin/Dashboard/adminDashboard.phtml");
@@ -31,6 +32,10 @@ class AdminDashboard extends \Core\Controller {
   
       View::render("Admin/ContainerSite/adminAjoutArticle.phtml");
   }
+    public function modifRole(){
+  
+      View::render("Admin/ContainerSite/modifRole.phtml");
+  }
   
   public function showUser(){
     $dashboadModels = new DashboadModels();
@@ -41,9 +46,12 @@ class AdminDashboard extends \Core\Controller {
 
 //modification du role de l'utilisateur
   public function changeRole(){
+    
     if( $_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])){
-      $dashboadModels = new DashboadModels();
-      $userRole = $dashboadModels -> countUser();
+    $id = $_POST["id"];
+    $role = $_POST["role"];
+    $model = new  DashboadModels();
+    $model ->role($id, $role);
     }
   }
 

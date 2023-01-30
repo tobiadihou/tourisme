@@ -4,8 +4,9 @@
 	<!-- end required header -->
   
     <body>
-        <form action="/DashboadModels/changeRole">
-            <select name="role" id="">
+        <form action="/AdminDashboard/changeRole" method="post">
+            <input type="hidden" name ="id" value="<?= $_SESSION['user'] ?>">
+            <select name="role" name="role">
                 <option value="user">User</option>
                 <option value="admin">Admin</option>
             </select>

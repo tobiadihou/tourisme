@@ -55,6 +55,8 @@ spl_autoload_register(function ($class) {
 
     $router->add('ajoutArticle', ['controller' => 'AdminDashboard', 'action' => 'addArticle']);
 
+    $router->add('role', ['controller' => 'AdminDashboard', 'action' => 'modifRole']);
+
     $router->add('posts/new', ['controller' => 'Posts', 'action' => 'new']);
     $router->add('{controller}/{action}');
     $router->add("{controller}/{id:\d+}/{action}");

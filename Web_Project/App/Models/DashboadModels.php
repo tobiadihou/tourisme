@@ -5,6 +5,9 @@
     use App\Models\ConnexionsModels;
 
     class DashboadModels extends ConnexionsModels{
+        public $role;
+        public $id;
+
         public function countUser(){
             $conn = $this -> connect();
             $count = $conn->prepare("SELECT count(*) countUser FROM users");
@@ -22,12 +25,16 @@
 
         
         
-        public function role(){
+        public function role($role, $id){
             $conn = $this->connect();
 
-            $role = $conn ->prepare("UPDATE `user` SET  users_role = :users_role WHERE id =Users_id");
-            $role -> execute();
-            $stmt = $role ->fetch();
+            $role = $conn ->prepare("UPDATE `users` SET  users_role = :role WHERE Users_id = :id ");
+            
+            $role -> execute([
+                ":role" => $role,
+                ":id" => $id,
+            ]);
+            $stmt = $role ->fetchAll();
             return $stmt; 
         }
 
