@@ -102,8 +102,10 @@
                         <div class="card__body">
                             <span class="ti-reload"></span>
                             <div>
-                                <h5>Nombre de personnne connecter</h5>
-                                <h4>MKW22,668.00</h4>
+                       
+                                <h5>Nombre de personnne inscrits</h5>
+                                
+                                <h4> <?= $userCount[0]["countUser"] ; ?></h4>
                             </div>
                         </div>
 
@@ -154,30 +156,38 @@
                                 <table>
                                 <thead>
                                     <tr>
-                                        <th>NON du touriste</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Team</th>
-                                        <th>Status</th>
+                                        <th>NON du touriste: </th>
+                                        <th>Prénom: </th>
+                                        <th>Nom d'utilisateur: </th>
+                                        <th>Email: </th>
+                                        <th>telephone: </th>
+                                        <th> Role </th>
+                                        <th>change Role </th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                if(count($user) > 0){
+                                    foreach ($user as $key => $value) {
+                                ?>
                                     <tr>
-                                        <td>App Development</td>
-                                        <td>15 Jan, 2021</td>
-                                        <td>25 Jan, 2021</td>
-                                        <td class="td-team">
-                                            <div class="img-1"></div>
-                                            <div class="img-2"></div>
-                                            <div class="img-3"></div>
-                                        </td>
-                                        <td>
-                                            <span class="badge success">
-                                                Success
-                                            </span>
-                                        </td>
+                                        <td><?= $user[$key]["users_fname"]; ?></td>
+                                        <td><?= $user[$key]["users_lname"]; ?></td>
+                                        <td><?= $user[$key]["users_username"]; ?></td>
+                                        <td><?= $user[$key]["users_email"]; ?></td>
+                                        <td><?= $user[$key]["users_contactNumber"]; ?></td>
+                                        <td><?= $user[$key]["user_role"]; ?></td>
+                                        <td> <a href="">Modifier</a> </td>
+                                        <td> Suprimer </td>
                                     </tr>
-                                    <tr>
+                                <?php
+                                    }
+                                    }else{
+                                        echo '<p class="empty">no article added yet!</p>';
+                                    }
+                                    ?>
+                                    <!-- <tr>
                                         <td>Front-end Design</td>
                                         <td>17 Jan, 2021</td>
                                         <td>28 Jan, 2021</td>
@@ -251,7 +261,7 @@
                                                 Processing
                                             </span>
                                         </td>
-                                    </tr>
+                                    </tr> -->
 
                                 </tbody>
                             </table>

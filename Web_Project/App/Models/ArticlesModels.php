@@ -35,20 +35,8 @@
                 }
                         
         }
-        
+        //insertion du premier article de la page blog
         public function insertArticleHomePage(){
-
-            $conn = $this->connect();
-
-            $select_home_article = $conn->prepare("SELECT * FROM `article` LIMIT 1,4");
-
-            $select_home_article->execute();
-
-            $stmt=$select_home_article->fetchAll();
-                
-            return $stmt;
-        }
-        public function insertArticleHomePageE(){
 
             $conn = $this->connect();
 
@@ -61,6 +49,20 @@
             return $stmt;
         }
 
+        //insertion des  article  similaire de la page blog
+
+        public function insertArticleHomePageE(){
+
+            $conn = $this->connect();
+
+            $select_home_article = $conn->prepare("SELECT * FROM `article` LIMIT ");
+
+            $select_home_article->execute();
+
+            $stmt=$select_home_article->fetchAll();
+                
+            return $stmt;
+        }
 
 }
         

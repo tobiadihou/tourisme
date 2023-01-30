@@ -34,6 +34,12 @@ public function verifyControl() {
           $pwd = password_verify($this->password, $resultFetchEmail[0]["userspassword"]);
           if($pwd === true && $resultFetchEmail[0]["user_role"] === "admin") {
               echo "Connexion admin réussi";
+              $_SESSION["user"]=$userid;
+              $_SESSION["name"]=$resultFetchEmail[0]["users_username"];
+              $_SESSION["fname"]=$resultFetchEmail[0]["users_fname"] ;
+              $_SESSION["lname"]=$resultFetchEmail[0]["users_lname"];
+              $_SESSION["email"]=$resultFetchEmail[0]["users_email"];
+              $_SESSION["phone"]=$resultFetchEmail[0]["users_contactNumber"];
               header("Location:admin/Dashborard");
               exit();
           } elseif($pwd === true && $resultFetchEmail[0]["user_role"] !== "admin") {

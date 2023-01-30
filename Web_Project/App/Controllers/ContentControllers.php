@@ -17,8 +17,10 @@ class ContentControllers  {
     public function homeArticleControllers() {
 
         $articleModel = new ArticlesModels();
-        $result = $articleModel->insertArticleHomePage();
-        return $result;
+        $article = $articleModel->insertArticleHomePage();
+
+        require_once "../App/Views/User/blog/blog.phtml";
+    //   return $article;
 
     }
     public function homeArticleControllersE() {

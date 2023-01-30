@@ -30,7 +30,7 @@ spl_autoload_register(function ($class) {
 
     $router->add('', ['controller' => 'UsersControllers', 'action' => 'index']);
 
-    $router->add('blog', ['controller' => 'UsersControllers', 'action' => 'blog']);
+    $router->add('blog', ['controller' => 'ContentControllers', 'action' => 'homeArticleControllers']);
 
     $router->add('register', ['controller' => 'UsersControllers', 'action' => 'register']);
 
@@ -49,7 +49,7 @@ spl_autoload_register(function ($class) {
 
     $router->add('profil', ['controller' => 'UsersControllers', 'action' => 'profil']);
 
-    $router->add('dashboard', ['controller' => 'AdminDashboard', 'action' => 'dashboard']);
+    $router->add('dashboard', ['controller' => 'AdminDashboard', 'action' => 'showUser']);
 
     $router->add('ajoutImage', ['controller' => 'AdminDashboard', 'action' => 'addImage']);
 

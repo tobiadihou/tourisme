@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use \Core\View;
+use \App\Models\DashboadModels;
 
 /**
  * Home controller
@@ -31,6 +32,20 @@ class AdminDashboard extends \Core\Controller {
       View::render("Admin/ContainerSite/adminAjoutArticle.phtml");
   }
   
+  public function showUser(){
+    $dashboadModels = new DashboadModels();
+    $userCount = $dashboadModels -> countUser();
+    $user = $dashboadModels -> User();
+    require_once('../App/Views/Admin/Dashboard/adminDashboard.phtml');
+}
+
+//modification du role de l'utilisateur
+  public function changeRole(){
+    if( $_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])){
+      $dashboadModels = new DashboadModels();
+      $userRole = $dashboadModels -> countUser();
+    }
+  }
 
      /**
    * Before filter

@@ -1,6 +1,9 @@
 
-  <?php  require_once "./head.phtml"; ?>
-  <?php  require_once "./header.phtml"; ?>
+ <?php
+  
+  require_once "./head.phtml";
+  require_once "./header.phtml";
+  ?>
 
 
 
@@ -11,30 +14,23 @@
         <h1 class="page_title">Le Blog</h1>
 
         <article>
+            <?php
+                       if(count($article) > 0){
+                           foreach ($article as $key => $value) {
+                    ?>
             <div>
-                <img class="blog_picture" src="../ressources/photos/tente.jpg" alt="Cabane au milieu de rien">
-                <h2>La Fête des sorcières en forêt de Masaka</h2>
+            <img src="/ressources/photos/<?= $article[$key]["article_img"]; ?>" alt="" >
+                <h2><?= $article[$key]['article_title']; ?></h2>
 
                 <div class="texte">
-                    <p class="texte_article"> Issue de la grande forêt centrale primitive de Bretagne, la forêt de Masaca 
-                        est une forêt de légendes où chaque année sorcières, sorciers, trolls, lutins et autres korrigans
-                        se retrouvent pour une grande fête à laquelle toute la famille est conviée.</p>
-                    <p class="texte_article"> Tout au long de la journée des spectacles et des concerts se succéderont,<br>
-                    ainsi que de nombreux ateliers autour de l’écologie et de la préservation de la nature.
-                    Le circuit ne présente pas de dangers et est accessible, ainsi que tous les jeux,<br> 
-                    à tous les enfants dès l’âge de 3 ans. À la nuit tombée, la fête s’adressera aux adultes,
-                    et la sorcellerie et les sortilèges seront à l’honneur. De nombreuses activités telles que
-                    la voyance, le spiritisme et la méditation seront proposées, encadrées par des professionnels.</p>
-                    <p class="texte_article"> L’origine de cette fête remonte à l’ère pré-chrétienne quand des feux de joie<br> 
-                        étaient allumés et des danses païennes faisaient partie de la célébration du printemps.
-                        A l’époque médiévale, les sorcières étaient chassées car on les croyait associées au diable.<br> 
-                        Lors de la Nuit de Walpurgis, les sorcières s’envolaient sur leurs balais vers leurs lieux de 
-                        sacrifice pour rencontrer d’autres sorcières. Des feux de joie étaient allumés 
-                        et des coups de feu tirés pour effrayer les sorcières.</p>
-                    <p class="texte_article"> Aujourd’hui encore, la tradition continue pour le bonheur de tous, 
-                        et cette année encore nous vous attendons en forêt de Masaca pour un moment forcément féerique.</p>
-
+                <?= $article[$key]['article_content']; ?>
                 </div>
+                <?php
+                }
+            }else{
+                echo '<p class="empty">no article added yet!</p>';
+            }
+            ?>
             </div>
         </article>
 

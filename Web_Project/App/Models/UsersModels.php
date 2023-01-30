@@ -193,12 +193,5 @@ namespace App\Models;
                 echo "</pre>";
         }  
 
-
-        public function user(){
-            $conn = $this->connect();
-
-            $sql = "SELECT * FROM user";
-            $sql="SELECT count(*) countUser FROM user";
-        }     
-      
+     
 } 

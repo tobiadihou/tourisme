@@ -25,14 +25,7 @@ class SingInControllers extends \Core\Controller {
         }   
     }
 
-    // public function deconnect() {
-    //     session_start();
-    //     session_unset();
-    //     session_destroy();
-    //     session_abort();  
-        
-    //     header("Location:/");
-    // }
+    
 
     /**
    * Before filter
