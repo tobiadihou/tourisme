@@ -1,5 +1,11 @@
 <!-- requiered header -->
-    <?php  require_once "./head.phtml"; ?>
+    <?php  require_once "./head.phtml"; 
+    if(!isset($_SESSION["admin"])) {
+
+        header('Location:/register');
+    
+    }
+    ?>
 <!-- end required header -->
 
 <body>

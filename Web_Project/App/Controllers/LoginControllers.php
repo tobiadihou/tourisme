@@ -37,8 +37,8 @@ class LoginControllers  {
         if($countEmail>0) {
               $pwd = password_verify($this->password, $resultFetchEmail[0]["userspassword"]);
               if($pwd === true && $resultFetchEmail[0]["user_role"] === "admin") {
-                  echo "Connexion admin réussi";
-                  $_SESSION["user"]=$userid;
+                $adminId=$resultFetchEmail[0]["user_id"];
+                $_SESSION["admin"]=$adminId;
                   $_SESSION["name"]=$resultFetchEmail[0]["users_username"];
                   $_SESSION["fname"]=$resultFetchEmail[0]["users_fname"] ;
                   $_SESSION["lname"]=$resultFetchEmail[0]["users_lname"];
