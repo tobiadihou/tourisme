@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mar. 24 jan. 2023 à 20:59
+-- Généré le : mar. 31 jan. 2023 à 15:42
 -- Version du serveur : 5.7.33
 -- Version de PHP : 8.1.12
 
@@ -44,45 +44,6 @@ INSERT INTO `article` (`article_id`, `article_title`, `article_img`, `article_co
 -- --------------------------------------------------------
 
 --
--- Structure de la table `galleries`
---
-
-CREATE TABLE `galleries` (
-  `galleries_id` int(11) NOT NULL,
-  `galleries_name` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gallerie_figcation` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `galleries_img` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `icon`
---
-
-CREATE TABLE `icon` (
-  `icon_id` int(11) NOT NULL,
-  `icon_name` int(11) NOT NULL,
-  `icon_link` int(11) NOT NULL,
-  `icon_icon` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `navlink`
---
-
-CREATE TABLE `navlink` (
-  `navlink_id` int(11) NOT NULL,
-  `navlink_pagename` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `link_page` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `navlink_role` enum('admin','user') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'user'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `reservation`
 --
 
@@ -100,7 +61,10 @@ CREATE TABLE `reservation` (
 
 INSERT INTO `reservation` (`reservation_id`, `users_id`, `guest`, `date_arrive`, `date_retour`) VALUES
 (1, 36, 'four', '2023-01-19', '2023-01-27'),
-(2, 36, 'four', '2023-01-19', '2023-01-27');
+(2, 36, 'four', '2023-01-19', '2023-01-27'),
+(3, 37, 'two', '2023-01-01', '2023-01-02'),
+(4, 37, 'two', '2023-01-01', '2023-01-02'),
+(5, 41, 'two', '2023-01-01', '2023-01-02');
 
 -- --------------------------------------------------------
 
@@ -124,10 +88,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`users_id`, `users_fname`, `users_lname`, `users_username`, `users_email`, `users_contactNumber`, `userspassword`, `user_role`) VALUES
-(33, '', '', '4111', 'atr@il.com', '029619517', '$2y$10$oIpcOjKysBvKnk7QaKctpOYQfr3pcCVLOg0SdlH7rFky5T03TIOXm', 'user'),
-(34, '', '', 'tot', 'e@e.e', '74185296', '$2y$10$04gxaSu.mSdZYNNdS2HurefBqr90UwnXtsaYQjK6rg1fdfcE7SSJ.', 'user'),
-(35, '', '', 'roott', 'b@b.b', '10203060', '$2y$10$nbNVlqDzBFtD0BEm/3W.Oes.iY58GQxG9sOKOTgLfi542MBMi3HdG', 'user'),
-(36, '', '', 'rodrigues', 'a@a.a', '01020304', '$2y$10$UIwx6u8lqOlYGDXYrl8EgurgF1XOdntYrwj1MrCJZyk3LIk8UAMx2', 'user');
+(38, 'ADIHOU', 'Tobi rodrigues', 'olatobi', 'adihoutobi@gmail.com', '61951757', '$2y$10$B2Nqlkvnxxj87UxtsOZ7YuiLYeXLsUFw6o6SqX9DK.TgcVM1zGsim', 'admin'),
+(42, 'Lambert', 'awokou', 'lawo', 'lawo@law.lawo', '12540325', '$2y$10$RTTb1God6eJwHW5Ew30mIO3u3PYN9H4zQKY5V4byZPXwLfu3UkPqe', 'user'),
+(43, 'marceline', 'rodrigues', 'red', 'marcelline@gmail.com', '41526398', '$2y$10$7BVaMK1CkwHGZrQLG3Ttbu1ft7WoH1GiMV2/6qPVKl.3bWxVaS6OC', 'user');
 
 --
 -- Index pour les tables déchargées
@@ -138,18 +101,6 @@ INSERT INTO `users` (`users_id`, `users_fname`, `users_lname`, `users_username`,
 --
 ALTER TABLE `article`
   ADD PRIMARY KEY (`article_id`);
-
---
--- Index pour la table `galleries`
---
-ALTER TABLE `galleries`
-  ADD PRIMARY KEY (`galleries_id`);
-
---
--- Index pour la table `navlink`
---
-ALTER TABLE `navlink`
-  ADD PRIMARY KEY (`navlink_id`);
 
 --
 -- Index pour la table `reservation`
@@ -178,28 +129,16 @@ ALTER TABLE `article`
   MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `galleries`
---
-ALTER TABLE `galleries`
-  MODIFY `galleries_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `navlink`
---
-ALTER TABLE `navlink`
-  MODIFY `navlink_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT pour la table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `users_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `users_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
