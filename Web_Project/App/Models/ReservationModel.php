@@ -4,6 +4,10 @@
 
     use App\Models\ConnexionsModels;
 
+    /**
+     * send reservation in database
+     * @return void
+     */
     class ReservationModel extends ConnexionsModels{
         public $id;
         public $guest;
@@ -41,5 +45,15 @@
                 echo "Some Internal Error Occured";
             }
             
+        }
+
+        public function reservation(){
+            $sql = "SELECT date_arrive,	date_retour,users_id FROM `reservation` ";
+            
+            $conn = $this->connect();
+            $reservation->execute();
+
+            $stmt=$reservation->fetchAll();
+                
         }
     }

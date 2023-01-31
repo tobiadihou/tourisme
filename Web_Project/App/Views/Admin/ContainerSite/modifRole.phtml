@@ -3,14 +3,21 @@
      <?php  require_once "./head.phtml"; ?>
 	<!-- end required header -->
   
-    <body>
-        <form action="/AdminDashboard/changeRole" method="post">
-            <input type="hidden" name ="id" value="<?= $_SESSION['user'] ?>">
-            <select name="role" name="role">
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
-            </select>
-            <input type="submit" name="submit" value="modifier">
-        </form>
-    </body>
-    </html>
+    <!--************ Modify role the user in admin -->
+<body>
+
+    <form action="/AdminDashboard/changeRole" method="post">
+
+        <input type="hidden" name ="id" value="<?= $_SESSION['user'] ?>">
+
+        <select name="role" name="role">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+        </select>
+
+        <input type="submit" name="submit" value="modifier">
+
+    </form>
+
+</body>
+</html>

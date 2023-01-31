@@ -27,7 +27,7 @@
 
             try {
                 /**
-                 * 
+                 * gestion des erreu d'excetion 
                  */
 
                 $conn = new \PDO($dsn, $USERNAME, $PASSWORD);

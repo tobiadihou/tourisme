@@ -10,6 +10,7 @@
 <body>
 <main class="blog">
 
+    <!-- ************** show article in database  ************* -->
     <div class="container">
         <h1 class="page_title">Le Blog</h1>
 
@@ -18,12 +19,14 @@
                        if(count($article) > 0){
                            foreach ($article as $key => $value) {
                     ?>
-            <div>
-            <img src="/ressources/photos/<?= $article[$key]["article_img"]; ?>" alt="" >
+            <div >
+            <img class="blog_picture" src="/ressources/photos/<?= $article[$key]["article_img"]; ?>" alt="" >
                 <h2><?= $article[$key]['article_title']; ?></h2>
 
                 <div class="texte">
-                <?= $article[$key]['article_content']; ?>
+                    <p class="texte_article">
+                        <?= $article[$key]['article_content']; ?>
+                    </p>
                 </div>
                 <?php
                 }

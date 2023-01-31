@@ -6,9 +6,10 @@
     <main class="booking">
         <h1>RESERVATION</h1>
         <form  action="ReservationControllers/validationReservation" method="post">
-          <?php if(isset($_SESSION["user"])) : ?>
-          <input type="hidden" name ="id" value="<?= $_SESSION['user'] ?>">
-          <?php endif; ?>
+
+            <?php if(isset($_SESSION["user"])) : ?>
+            <input type="hidden" name ="id" value="<?= $_SESSION['user'] ?>">
+            <?php endif; ?>
             <label for="guests">Je souhaite réserver pour&nbsp;:</label>
             <select id="guests" name="guests">
 
@@ -27,16 +28,18 @@
             <label for="end">Fin du séjour&nbsp;:</label>
             <input type="date" id="end"  name="dateEnd" value="2023-01-02" min="2023-01-02" max="2023-12-31">
             <?php if(isset($_SESSION["user"])) : ?>
+
               <button type="submit" name="submit">Rechercher</button>
               <?php else : ?>
                 <a href="/register">Connecter vous pour faire une reservation</a>
-              <?php endif; ?> 
+
+            <?php endif; ?> 
         </form>
 
         <p>Les clés sont remises dès 11h00.</p>
         <p>Afin que vous profitiez au mieux de votre séjour, un service de conciergerie et une navette vers la gare de
         Masaca sont mis à votre disposition.</p>
-        <p>Vous pouvez nous contacter pour plus d'informations.</p>
+        <p class="p">Vous pouvez nous contacter pour plus d'informations.</p>
 
     </main>
       <!-- requiered footer -->

@@ -27,7 +27,7 @@ class UsersControllers extends \Core\Controller {
    */
 
   public function blogAction() {
-    // echo "Hello from the index action in the Home controller";
+
     View::render("User/blog/blog.phtml");
     
   }
@@ -39,8 +39,8 @@ class UsersControllers extends \Core\Controller {
    */
 
   public function registerAction() {
+    
     View::render("User/register/register.phtml");
-    // echo "<p>Querx string parameters: <pre>" . 
   }
 
  /**

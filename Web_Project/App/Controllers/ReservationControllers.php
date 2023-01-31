@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Controllers;
-
-// require "../App/Controllers/RegisterControllers.php";
 use App\Models\ReservationModel;
-
-
 use \Core\View;
 
+
+/**
+ * send to reservation in the database
+ * envoie des reservation dans la base des donné
+ * @return void
+ */
 class ReservationControllers {
     public $id;
     public $guests;
@@ -25,7 +27,7 @@ class ReservationControllers {
         }
   }
 
-  //
+  //verify input to reservation page forms
     public function emptyInput(){
         if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
       

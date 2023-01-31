@@ -3,12 +3,17 @@
     namespace App\Models;
 
     use App\Models\ConnexionsModels;
-
+    /**
+     * send an receve image in database 
+     * @return void
+     */
     class ImagesModels extends ConnexionsModels{
         public $category;
         public $articleModel;
         public $imageModel;
         public $cid;
+
+        //send methode
         public function insertImages($files) {
         
             $conn = $this->connect();
@@ -40,6 +45,7 @@
             
         }
 
+        //recever
         public function insertImageFoodPage(){
 
             $conn = $this->connect();
@@ -53,7 +59,8 @@
             return $stmt;
 
         }
-        
+
+        //recever
         public function insertImageGalleriePage(){
 
             $conn = $this->connect();

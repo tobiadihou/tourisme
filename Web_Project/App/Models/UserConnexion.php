@@ -4,6 +4,10 @@
 
     use App\Models\ConnexionsModels;
     
+    /**
+     * verify email and pass word to connexion in database
+     * verification des email et du mots de passe dans la base de donne
+     */
     class UserConnexion extends ConnexionsModels{  
         /**
          * $conn

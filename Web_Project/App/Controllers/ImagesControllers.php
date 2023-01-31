@@ -9,7 +9,11 @@ use Core\View;
 
 
 class ImagesControllers extends \Core\Controller {
-  
+  /**
+   * send a picture in database
+   * verification du format , de la taille des image
+   * @return void
+   */
   public function SendAction() {
     
     

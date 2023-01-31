@@ -4,9 +4,14 @@
 
     use App\Models\ConnexionsModels;
 
-    class DashboadModels extends ConnexionsModels{
+    /**
+     * receve to information in database for admin page
+     * @return void
+     */
+
+    class DashboadModels extends ConnexionsModels {
         public $role;
-        public $id;
+        public $id; 
 
         public function countUser(){
             $conn = $this -> connect();
@@ -24,7 +29,7 @@
         }
 
         
-        
+        //change role the user in admin
         public function role($role, $id){
             $conn = $this->connect();
 

@@ -94,15 +94,19 @@
                 </div>
             </header>
 
+            <!--************* Dashbord admin************* -->
             <main>
+
                 <h2 class="dashboard__title">Overview</h2>
                 <div class="dashboard__cards">
 
                     <div class="card__single">
                         <div class="card__body">
+                            
                             <span class="ti-reload"></span>
+                            <!-- nombres de personne inscrit -->
                             <div>
-                       
+
                                 <h5>Nombre de personnne inscrits</h5>
                                 
                                 <h4> <?= $userCount[0]["countUser"] ; ?></h4>
@@ -166,102 +170,29 @@
                                         
                                     </tr>
                                 </thead>
+                                <!-- la liste de tous les utilisateur -->
                                 <tbody>
-                                <?php
-                                if(count($user) > 0){
-                                    foreach ($user as $key => $value) {
-                                ?>
-                                    <tr>
-                                        <td><?= $user[$key]["users_fname"]; ?></td>
-                                        <td><?= $user[$key]["users_lname"]; ?></td>
-                                        <td><?= $user[$key]["users_username"]; ?></td>
-                                        <td><?= $user[$key]["users_email"]; ?></td>
-                                        <td><?= $user[$key]["users_contactNumber"]; ?></td>
-                                        <td><?= $user[$key]["user_role"]; ?></td>
-                                        <td> <a href="/role">Modifier</a> </td>
-                                        <td> Suprimer </td>
-                                    </tr>
-                                <?php
-                                    }
-                                    }else{
-                                        echo '<p class="empty">no article added yet!</p>';
-                                    }
+                                    <?php
+                                    if(count($user) > 0){
+                                        foreach ($user as $key => $value) {
                                     ?>
-                                    <!-- <tr>
-                                        <td>Front-end Design</td>
-                                        <td>17 Jan, 2021</td>
-                                        <td>28 Jan, 2021</td>
-                                        <td class="td-team">
-                                            <div class="img-1"></div>
-                                            <div class="img-2"></div>
-                                            <div class="img-3"></div>
-                                        </td>
-                                        <td>
-                                            <span class="badge success">
-                                                Success
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Logo Design</td>
-                                        <td>20 Jan, 2021</td>
-                                        <td>31 Jan, 2021</td>
-                                        <td class="td-team">
-                                            <div class="img-1"></div>
-                                            <div class="img-2"></div>
-                                            <div class="img-3"></div>
-                                        </td>
-                                        <td>
-                                            <span class="badge warning">
-                                                Processing
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>App Deployment</td>
-                                        <td>15 Jan, 2021</td>
-                                        <td>25 Jan, 2021</td>
-                                        <td class="td-team">
-                                            <div class="img-1"></div>
-                                            <div class="img-2"></div>
-                                            <div class="img-3"></div>
-                                        </td>
-                                        <td>
-                                            <span class="badge success">
-                                                Success
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Youtube Channel</td>
-                                        <td>17 Jan, 2021</td>
-                                        <td>28 Jan, 2021</td>
-                                        <td class="td-team">
-                                            <div class="img-1"></div>
-                                            <div class="img-2"></div>
-                                            <div class="img-3"></div>
-                                        </td>
-                                        <td>
-                                            <span class="badge warning">
-                                                Processing
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Web Development</td>
-                                        <td>20 Jan, 2021</td>
-                                        <td>31 Jan, 2021</td>
-                                        <td class="td-team">
-                                            <div class="img-1"></div>
-                                            <div class="img-2"></div>
-                                            <div class="img-3"></div>
-                                        </td>
-                                        <td>
-                                            <span class="badge warning">
-                                                Processing
-                                            </span>
-                                        </td>
-                                    </tr> -->
+                                        <tr>
+                                            <td><?= $user[$key]["users_fname"]; ?></td>
+                                            <td><?= $user[$key]["users_lname"]; ?></td>
+                                            <td><?= $user[$key]["users_username"]; ?></td>
+                                            <td><?= $user[$key]["users_email"]; ?></td>
+                                            <td><?= $user[$key]["users_contactNumber"]; ?></td>
+                                            <td><?= $user[$key]["user_role"]; ?></td>
+                                            <td> <a href="/role">Modifier</a> </td>
+                                            <td> Suprimer </td>
+                                        </tr>
+                                    <?php
+                                        }
+                                        }else{
+                                            echo '<p class="empty">no article added yet!</p>';
+                                        }
+                                        ?>
+                                
 
                                 </tbody>
                             </table>

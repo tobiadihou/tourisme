@@ -14,22 +14,26 @@ class ContentControllers  {
     public $imageModel;
     public $cid;
 
+    /**
+     * send image to page home the image
+     * methode d'envoie des image sur la page home 
+     * @return array
+     */
     public function homeArticleControllers() {
 
         $articleModel = new ArticlesModels();
         $article = $articleModel->insertArticleHomePage();
 
         require_once "../App/Views/User/blog/blog.phtml";
-    //   return $article;
-
+   
     }
-    public function homeArticleControllersE() {
 
-        $articleModel = new ArticlesModels();
-        $result = $articleModel->insertArticleHomePageE();
-        return $result;
 
-    }
+    /**
+     * send image to page food the image
+     * methode d'envoie des image sur la page food 
+     * @return array
+     */
     public function imagePageFood() {
 
         $imageModel = new ImagesModels();
@@ -38,6 +42,11 @@ class ContentControllers  {
 
     }
 
+    /**
+     * send image to page galerie the image
+     * methode d'envoie des image sur la page gallerie 
+     * @return array
+     */
     public function imagePageGallerie() {
 
         $imageModel = new ImagesModels();
@@ -46,18 +55,6 @@ class ContentControllers  {
 
     }
 
-    public function takeUsere() {
-   
-     
-    }
-
-    // public function MatchUserNavBar(){
-
-    //     $this->productsmodel=new UserModel();
-    //     $result= $this->productsmodel->searchUserConnect();
-    //     return $result;
-    
-    //   }
-
+ 
 }
 

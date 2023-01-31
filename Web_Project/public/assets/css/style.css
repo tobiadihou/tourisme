@@ -26,11 +26,7 @@
 
 * {
   font-family: 'Poppins', sans-serif;
-  margin: 0;
   padding: 0;
-  text-decoration: none;
-  list-style-type: none;
-  box-sizing: border-box;
 }
 
 /*****************************************************************
@@ -45,32 +41,19 @@ main {
 header {
   background-color: var(--green);
   color: white;
-  height: 4.1rem;
 }
-
-.header2 {
+.header1, .header2 {
   display: flex;
-  align-items: baseline;
-  height: 2.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.container_logo {
-   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
-  margin-left: 50px;
-
+   height: 200px;  
 } 
+
+
 
 .titre {
   padding-bottom: 0.5rem;
   margin: 0;
-}
-
-.container_logo {
-  margin-left: 5rem;
 }
 
 .article{
@@ -101,9 +84,6 @@ header {
   color: var(--white);
 }
 
-.menu_cache {
-  align-self: flex-start;
-}
 .menu_cache ul {
   list-style-type: none;
   display: flex;
@@ -111,7 +91,7 @@ header {
 }
 .menu_cache ul li {
   margin-right: 20px;
-  padding: 1em;  
+  
 }
 .menu_cache  ul li a {
   text-decoration: none;
@@ -128,6 +108,11 @@ header {
 }
 .none {
   display: none;
+}
+.container_logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 /*****************************************************************
 header
@@ -158,7 +143,7 @@ HOME PAGES
     background: #162944;
     opacity: 0.7;
     margin-bottom: -8px;
-    height: 72px;
+    height: 70px;
  } 
 
 /* The dots/bullets/indicators */
@@ -317,10 +302,12 @@ GITES
 RESERVATION
 *******************************************************************/
 .booking > h1, select, input, p {
-  width: 40%;
+  width: 30%;
 }
 
-
+/* .booking {
+  height: 100vh;
+} */
 main h1 {
   text-align: center;
   margin: 1vh auto;
@@ -351,17 +338,23 @@ p {
   text-align: center;
   margin: 1vh auto;
 }
+.p {
+  margin-bottom: 2rem;
+}
+
+
 
 /*******************************************************************
-RESERVATION
+fin RESERVATION
 ********************************************************************/
 
 
 /*******************************************************************
-  style activite
+debut  style activite
 ********************************************************************/
 .pageActivite{
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
+ 
 }
 
 .pageActivite section{
@@ -378,21 +371,21 @@ RESERVATION
     float: right;
     margin: 5px;
     position: relative;
-    list-style: none;
+    list-style: block;
 }
 
 .lb-album li > a,
 .lb-album li > a img{
-    display: block;
+    display: flex;
 }
 
 .lb-album li > a{
-    width: 150px;
-    height: 150px;
-    position: relative;
-    padding: 10px;
-    background: --lb-album;
-    border-radius: 4px 4px 4px 4px;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  padding: 10px;
+  background: #654f1ad9;
+  border-radius: 4px 4px 4px 4px;
 }
 
 .lb-album li > a span{
@@ -408,6 +401,7 @@ RESERVATION
     font-size: 24px;
     opacity: 0;
     filter: alpha(opacity=0); /* internet explorer */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=0)"; /*IE8*/
     background: #654f1ae0;
     transition: opacity 0.3s linear;
 }
@@ -436,7 +430,7 @@ RESERVATION
     color: rgba(27,54,81,0.8);
     opacity: 0;
     filter: alpha(opacity=0); /* internet explorer */
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=0)"; /*IE8*/
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=0)"; /*IE8 */
     width: 550px;
     margin: 10px auto 0px auto;
     text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
@@ -479,9 +473,9 @@ RESERVATION
     z-index: 1001;
     color: #fff;
     position: absolute;
-    top: 43px;
+    top: 3.5rem;
     left: 50%;
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 26px;
     text-align: center;
     width: 50px;
@@ -521,11 +515,29 @@ RESERVATION
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=99)"; /*IE8*/
 }
 
+@-webkit-keyframes scaleDown {
+  0% { -webkit-transform: scale(10,10); opacity: 0; }
+  100% { -webkit-transform: scale(1,1); opacity: 1; }
+}
+@-moz-keyframes scaleDown {
+  0% { -moz-transform: scale(10,10); opacity: 0; }
+  100% { -moz-transform: scale(1,1); opacity: 1; }
+}
+@-o-keyframes scaleDown {
+  0% { -o-transform: scale(10,10); opacity: 0; }
+  100% { -o-transform: scale(1,1); opacity: 1; }
+}
+@-ms-keyframes scaleDown {
+  0% { -ms-transform: scale(10,10); opacity: 0; }
+  100% { -ms-transform: scale(1,1); opacity: 1; }
+}
 @keyframes scaleDown {
   0% { transform: scale(10,10); opacity: 0; }
   100% { transform: scale(1,1); opacity: 1; }
 }
-
+x:-o-prefocus, .lb-overlay img {
+  height: 100%;
+} 
 /*******************************************************************
    STYLE BLOG
 ********************************************************************/
@@ -592,17 +604,8 @@ h2{
 
 }
 
-
-/*******************************************************************
-  STYLE BLOG
-*******************************************************************/
-
-
-/*******************************************************************
-  STYLE BLOG
-*******************************************************************/
-main h1, input, textarea {
-  width: 30%;
+.conexion {
+  height: 100vh;
 }
 
 /*******************************************************************
@@ -612,7 +615,7 @@ main h1, input, textarea {
 footer {
   background-color: var(--green);
   width: 100%;
-  height: 100px;
+ margin-top: 2rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -679,12 +682,12 @@ footer img {
 }
 
 .sidebar__toggle:checked ~ .sidebar .sidebar__header h3 span,
-.sidebar__toggle:checked ~ .sidebar li span:last-child{
-    display: none;
+.sidebar__toggle:checked ~ .sidebar li span:last-child {
+    display:;
 }
 
 .sidebar__toggle:checked ~ .sidebar .sidebar__header,
-.sidebar__toggle:checked ~ .sidebar li{
+.sidebar__toggle:checked ~ .sidebar li {
     display: flex;
     justify-content: center;
 }
@@ -751,12 +754,6 @@ footer img {
     border-radius: 50%;
 }
 
-/* main {
-    margin-top: 60px;
-    background: var(--color-white-2);
-    min-height: 90vh;
-    padding: 1rem 3rem;
-} */
 
 .dashboard__title {
     color: var(--color-dark);
@@ -888,17 +885,7 @@ tbody tr:nth-child(even){
     background-repeat: no-repeat;
 }
 
-.img-1 {
-    background-image: url(./assets/img/user.png);
-}
 
-.img-2 {
-    background-image: url(./assets/img/user.png);
-}
-
-.img-3 {
-    background-image: url(./assets/img/user.png);
-}
 
 .summary__card,
 .bday__card {
@@ -946,15 +933,6 @@ tbody tr:nth-child(even){
     padding: 1rem;
 }
 
-.bday__img {
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    border: 3px solid var(--color-white-4);
-    background-size: cover;
-    background-image: url(./assets/img/user.png);
-    margin-right: .7rem;
-}
 
 .text__center {
     text-align: center;
@@ -972,12 +950,7 @@ tbody tr:nth-child(even){
     overflow-x: auto;
 }
 
-/* @media only screen and (min-width: 1200px) {
-    .main__content header {
-        left: 60px;
-        width: calc(100% - 60px);
-    }
-} */
+
 
 
     .sidebar {
@@ -1009,10 +982,7 @@ tbody tr:nth-child(even){
         width: 240px;
     }
     
-    .sidebar__toggle:checked ~ .sidebar .sidebar__header h3 span,
-    .sidebar__toggle:checked ~ .sidebar li span:last-child{
-        display: inline;
-    }
+   
     
     .sidebar__toggle:checked ~ .sidebar .sidebar__header{
         display: flex;
@@ -1038,7 +1008,7 @@ tbody tr:nth-child(even){
 
 
 /****************************************************************************
- css page admin
+fin  css page admin
 *****************************************************************************/
 
 
@@ -1046,63 +1016,99 @@ tbody tr:nth-child(even){
 /****************************************************************************
  RESPONSIVE
 *****************************************************************************/
-@media screen and (max-width: 768px){
-    .slideshow-container {
-      display: none;
-      position: relative;
-      margin: auto;
-    }
 
+@media screen and (max-width: 485px) {
+    .header1 {
+        justify-content: space-between;
+
+    }
+    .container_logo {
+        margin-left: 10px;
+    }
+    .hamburger {
+        margin-right: 10px
+    }
     .nos-gites{
       display: none;
       position: relative;
       margin: auto;
     }
-
-    .menu_cache ul {
-      flex-wrap: wrap;
+    .slideshow-container {
+      display: none;
+      position: relative;
+      margin: auto;
     }
+    .signature p {
+      margin: 10px 0;
+   }
+   
+  .lb-overlay img {
+  max-height: 100%;
+  margin-left: -33px;
+  position: relative;
+  }
+  .lb-overlay div h3 {
+  font-size: 23px;
+  text-align: left;
+  }
+}
 
-    main h1, select, input, p {
-      width: 50%;
+
+  @media screen and (max-width: 768px) {
+      .header2 {
+        display: none;
+      }
+      main h1, select, input, p {
+        width: 70%;
     }
-
     main h1, input, textarea {
       width: 70%;
     }
+    .blog_picture {
+      width: 100%;
+      margin: 20px 0;
+  }
+  .signature {
+      justify-content: space-around;
+  }
+  .signature p {
+      margin: 8px 0;
+  }
+  .articles_similaires {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  }
+  .article {
+      width: 33%;
+  }
+  .description_image {
+      position: relative;
+      top: 18px;
+  }
+}
 
-    .signature p {
-      margin: 10px 0;
+  @media screen and (min-width: 769px) {
+    .header1 {
+        display: none;
     }
-
-    .lb-album {
-      width: 166px;
+    .container_logo {
+        margin-left: 50px;
     }
-
-    .lb-overlay img {
-    max-height: 100%;
-    margin-left: -33px;
+  .slideshow-container {
+    display: block;
     position: relative;
-    }
-
-    .lb-overlay div h3 {
-    font-size: 23px;
-    text-align: left;
-    }
-
-    .dashboard__cards{
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .card__single {
-      margin-bottom: 1rem;
-    }
-
-    .activity__grid {
-      display: block;
-    }
-
-    .summary {
-      margin-top: 1.5rem;
-    }
+    margin: auto;
+  }
+  .nos-gites{
+    display: none;
+    position: relative;
+    margin: auto;
+  }
+  main h1, select, input, p {
+    width: 50%;
+  }
+  main h1, input, textarea {
+    width: 50%;
+  }
 }

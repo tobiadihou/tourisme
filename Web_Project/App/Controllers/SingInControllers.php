@@ -17,15 +17,20 @@ class SingInControllers extends \Core\Controller {
    */
     public function connexionAction() {
         if( $_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["login"])) {
-            $email = $_POST["email"];
-            $password = $_POST["password"];
+            $email = $this->test_input($_POST["email"]);
+            $password = $this->test_input($_POST["password"]);
             $controller = new LoginControllers ( $email, $password);
             $controller->verifyControl();
             // echo "Connexion réussi";
         }   
     }
 
-    
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
 
     /**
    * Before filter

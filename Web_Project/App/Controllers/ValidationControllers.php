@@ -8,28 +8,30 @@ use App\Models\UsersModels;
 
 class ValidationControllers  {
 /**
- * $usermodel
+ * validate input to register
+ * verification et validation des champs
+ * @return void
  */
-public $usermodel;
-public $fname;
-public $lname;
-public $username;
-public $email;
-public $password;
-public $confirm_password;
-public $contactNo;
+   public $usermodel;
+   public $fname;
+   public $lname;
+   public $username;
+   public $email;
+   public $password;
+   public $confirm_password;
+   public $contactNo;
 
-public function __construct($fname,$lname,$username, $email, $password,$confirm_password, $contactNo) {
-    $this->fname = $fname;
-    $this->lname = $lname;
-    $this->username = $this->sanitaze($username);
-    $this->email = $email;
-    $this->password = $password;
-    $this->confirm_password = $confirm_password;
-    $this->contactNo=$contactNo;
-    $this->usermodel = new UsersModels();
+   public function __construct($fname,$lname,$username, $email, $password,$confirm_password, $contactNo) {
+      $this->fname = $fname;
+      $this->lname = $lname;
+      $this->username = $this->sanitaze($username);
+      $this->email = $email;
+      $this->password = $password;
+      $this->confirm_password = $confirm_password;
+      $this->contactNo=$contactNo;
+      $this->usermodel = new UsersModels();
 
-   }
+      }
    
    public function sanitaze($data) {
       $reg = preg_replace("/\s+/", " ", $data);
@@ -38,6 +40,7 @@ public function __construct($fname,$lname,$username, $email, $password,$confirm_
       return $data;
 
    }
+   
    
    public function verifyControl() {
       

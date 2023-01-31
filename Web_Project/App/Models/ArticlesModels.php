@@ -1,12 +1,14 @@
 <?php 
 
     namespace App\Models;
-
     use App\Models\ConnexionsModels;
 
+    /**
+     * insert aarticle in database
+     * class qui envoie les article dans la base de donner
+     */
     class ArticlesModels extends ConnexionsModels{
        
-
         public function insertArticle($title,$file,$content) {
            
             $conn = $this->connect();
@@ -41,21 +43,6 @@
             $conn = $this->connect();
 
             $select_home_article = $conn->prepare("SELECT * FROM `article` LIMIT 1");
-
-            $select_home_article->execute();
-
-            $stmt=$select_home_article->fetchAll();
-                
-            return $stmt;
-        }
-
-        //insertion des  article  similaire de la page blog
-
-        public function insertArticleHomePageE(){
-
-            $conn = $this->connect();
-
-            $select_home_article = $conn->prepare("SELECT * FROM `article` LIMIT ");
 
             $select_home_article->execute();
 

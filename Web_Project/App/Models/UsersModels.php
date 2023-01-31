@@ -55,7 +55,7 @@ namespace App\Models;
             $this->username = $username;
     
             /**
-             * 
+             * connet bd
              */
             $conn = $this->connect();
             /**
@@ -79,10 +79,6 @@ namespace App\Models;
         
             $this->phoneNumber = $phoneNumber;
     
-            /**
-             * 
-             * 
-             */
             $conn = $this->connect();
             /**
              * $sql
@@ -96,7 +92,7 @@ namespace App\Models;
             $result = $stmt->fetchAll();
             
             return $result;
-            }
+        }
         
         public function vreifypassord($password) {
             $this->password = $password;
@@ -108,24 +104,24 @@ namespace App\Models;
             $result = $stmt->fetchAll();
             
             return $result;
-            }
+        }
         
-            public function verifyEmailConnexion($emailConnexion){
+        public function verifyEmailConnexion($emailConnexion){
 
-                $this->emailConnexion=$emailConnexion;
+            $this->emailConnexion=$emailConnexion;
 
-                $conn = $this->connect();
+            $conn = $this->connect();
 
-                $sql = "SELECT * FROM `site_touristique`.users WHERE users_email = ?;";
-                /**
-                 * $stmt
-                 */
-                $stmt = $conn->prepare($sql);
-                $stmt->execute([$this->emailConnexion]);
-                $result = $stmt->fetchAll();
-            
-                return  $result;
-            }
+            $sql = "SELECT * FROM `site_touristique`.users WHERE users_email = ?;";
+            /**
+             * $stmt
+             */
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$this->emailConnexion]);
+            $result = $stmt->fetchAll();
+        
+            return  $result;
+        }
 
         public function verifyEmailConn($emailConnexion){
 
@@ -180,6 +176,11 @@ namespace App\Models;
             }
         }
 
+        /**
+         * take the information  to uses in connect
+         * recuperation des identifiant de l'utilisateur a la connexion
+         * @return void
+         */
         public function connexionUser(){
        
             $conn = $this->connect();
@@ -188,9 +189,7 @@ namespace App\Models;
                 $stmt = $conn->prepare($sql);
                 $stmt->execute();
                 $row=$stmt->fetch();
-                echo "<pre>";
-                var_dump($row);
-                echo "</pre>";
+               
         }  
 
      
