@@ -28,16 +28,6 @@ class AddArticleControllers extends \Core\Controller {
     }
     
     //send link in database
-  public function linkDb() {
-
-    if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
-
-      $NavLink = $_POST["navLin"];
-      var_dump($NavLink);
-      $pageLink = $_POST["pageLink"];
-      $model = new ArticlesModels();
-      $model->insertlink($NavLink,$model);
-
-    }
-  }
+  
+ 
 }

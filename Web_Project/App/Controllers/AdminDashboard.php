@@ -35,6 +35,10 @@ class AdminDashboard extends \Core\Controller {
     
         View::render("Admin/ContainerSite/modifRole.phtml");
     }
+      public function editUser(){
+    
+        View::render("Admin/ContainerSite/editUser.phtml");
+    }
     
     public function showUser(){
       $dashboadModels = new DashboadModels();
