@@ -51,7 +51,7 @@ class ValidationControllers  {
      $countEmail = count($resultFetchEmail);
      $countUsername = count($resultFetchUsername);
      $countPhoneNumber = count( $resultFetchPhoneNumber);
-     $count= $countEmail+ $countUsername + $countPhoneNumber;
+     $count = $countEmail + $countUsername + $countPhoneNumber;
   
      if($count>0) {
       

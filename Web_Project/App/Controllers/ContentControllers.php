@@ -29,32 +29,7 @@ class ContentControllers  {
     }
 
 
-    /**
-     * send image to page food the image
-     * methode d'envoie des image sur la page food 
-     * @return array
-     */
-    public function imagePageFood() {
-
-        $imageModel = new ImagesModels();
-        $result  = $imageModel->insertImageFoodPage();
-        return $result;
-
-    }
-
-    /**
-     * send image to page galerie the image
-     * methode d'envoie des image sur la page gallerie 
-     * @return array
-     */
-    public function imagePageGallerie() {
-
-        $imageModel = new ImagesModels();
-        $result = $imageModel->insertImageGalleriePage();
-        return $result;
-
-    }
-
+   
  
 }
 

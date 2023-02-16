@@ -50,6 +50,9 @@ class UsersControllers extends \Core\Controller {
    */
 
   public function connetAction() {
+
+   
+
     View::render("User/register/singIn.phtml");
 
   }
