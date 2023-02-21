@@ -55,6 +55,35 @@
                 
         }
 
+        public function selectAllUserData(){
+    $sql = "SELECT * FROM tbl_users ORDER BY id DESC";
+    $stmt = $this->db->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_OBJ);
+  }
+
+
+  // User login Autho Method
+  public function userLoginAutho($email, $password){
+    $password = SHA1($password);
+    $sql = "SELECT * FROM tbl_users WHERE email = :email and password = :password LIMIT 1";
+    $stmt = $this->db->pdo->prepare($sql);
+    $stmt->bindValue(':email', $email);
+    $stmt->bindValue(':password', $password);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_OBJ);
+  }
+  // Check User Account Satatus
+  public function CheckActiveUser($email){
+    $sql = "SELECT * FROM tbl_users WHERE email = :email and isActive = :isActive LIMIT 1";
+    $stmt = $this->db->pdo->prepare($sql);
+    $stmt->bindValue(':email', $email);
+    $stmt->bindValue(':isActive', 1);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_OBJ);
+  }
+
+
     }
         
     

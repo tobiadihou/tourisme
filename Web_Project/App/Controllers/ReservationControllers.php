@@ -15,6 +15,7 @@ class ReservationControllers {
     public $guests;
     public $debut;
     public $fin;
+    public $model;
 
     public function validationReservation() {
         if($this->emptyInput()=== "succes") {
@@ -44,5 +45,32 @@ class ReservationControllers {
               return false;
             }
     }
+
+    
+    // Affichage de toutes les réservations enregistrées
+
+    public function showReservation() {
+      $controllers = new ReservationModel();
+      $resultatReservation= $controllers->showReservation();
+      $tabCount = $controllers->countReservation();
+      $nbrReservation = $tabCount["countR"]; 
+      require_once('../App/Views/Admin/reservation.php');
+  }
+
+
+
+  // Affichage de toutes les réservations enregistrées par l'utilisateur
+
+  public function afficheReservation() {
+      session_start();
+      $controllers = new ReservationModel();
+      $userID = $_SESSION["users_id"];
+      
+      $resultatReservation = $controllers->afficheReservation($userID);
+      $tabCount = $controllers->countReservationUser($userID);
+      $nbrReservation = $tabCount["countR"]; 
+      require_once('../App/Views/Users/afficheReservation.php');
+  }
+  
 
 }

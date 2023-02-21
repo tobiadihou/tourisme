@@ -15,7 +15,8 @@ class UsersControllers extends \Core\Controller {
    */
 
   public function indexAction() {
-    
+   
+   
     View::render("User/Home/index.phtml");
     
   }
@@ -27,7 +28,8 @@ class UsersControllers extends \Core\Controller {
    */
 
   public function blogAction() {
-
+   
+   
     View::render("User/blog/blog.phtml");
     
   }
@@ -39,7 +41,8 @@ class UsersControllers extends \Core\Controller {
    */
 
   public function registerAction() {
-    
+   
+   
     View::render("User/register/register.phtml");
   }
 
@@ -52,12 +55,15 @@ class UsersControllers extends \Core\Controller {
   public function connetAction() {
 
    
-
+   
+   
     View::render("User/register/singIn.phtml");
 
   }
 
   public function deconnetAction() {
+   
+   
     View::render("User/register/deconnexion.phtml");
 
   }
@@ -69,7 +75,8 @@ class UsersControllers extends \Core\Controller {
    */
 
   public function contactAction() {
-
+   
+   
     View::render("User/contact/contact.phtml");
     
   }
@@ -81,6 +88,8 @@ class UsersControllers extends \Core\Controller {
    */
 
   public function gitesAction() {
+   
+   
     // echo "Hello from the index action in the Home controller";
     View::render("User/gites/gites.phtml");
   }
@@ -92,7 +101,11 @@ class UsersControllers extends \Core\Controller {
    */
 
   public function activiteAction() {
+   
+   
+
     // echo "Hello from the index action in the Home controller";
+
     View::render("User/activité/activites.phtml");
   }
 
@@ -106,9 +119,18 @@ class UsersControllers extends \Core\Controller {
     // echo "Hello from the index action in the Home controller";
     View::render("User/reservation/reservation.phtml");
   }
+  public function afficheReservation() {
+    // echo "Hello from the index action in the Home controller";
+    View::render("User/reservation/afficheReservation.phtml");
+  }
+  public function notification() {
+    // echo "Hello from the index action in the Home controller";
+    View::render("User/reservation/notification.phtml");
+  }
 
   public function profilAction() {
-     
+   
+   
     // $controller = new LoginControllers($email, $password);
     // $info=  $controller->verifyControl();
 

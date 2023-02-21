@@ -48,7 +48,7 @@ class LoginControllers  {
                   exit();
               } elseif($pwd === true && $resultFetchEmail[0]["user_role"] !== "admin") {
 
-                  $re=$this->usermodel->verifyEmailConn($this->email);
+                    $this->usermodel->verifyEmailConn($this->email);
                     $userid=$resultFetchEmail[0]["users_id"];
                     //profil for user
                   $_SESSION["user"]=$userid;

@@ -41,6 +41,8 @@ spl_autoload_register(function ($class) {
     $router->add('activites', ['controller' => 'UsersControllers', 'action' => 'activite']);
 
     $router->add('reservation', ['controller' => 'UsersControllers', 'action' => 'reservation']);
+    $router->add('afficheReservation', ['controller' => 'UsersControllers', 'action' => 'afficheReservation']);
+    $router->add('notification', ['controller' => 'UsersControllers', 'action' => 'notification']);
 
 
     $router->add('singIn', ['controller' => 'UsersControllers', 'action' => 'connet']);

@@ -7,13 +7,11 @@
 <!-- end required header -->
 
     <body>
-
-       
                 <section class="recent">
 
                     <div class="activity__grid">
                         <div class="activity__card">
-                            <h3>Recent activity</h3>
+                        <h2>Il y a <?php echo $nbrUser ?> <span class="title-nbr">utilisateurs</span> au total inscrits sur le site</h2> 
 
                             <div class="table__responsive">
                                 <table>
@@ -42,8 +40,15 @@
                                             <td><?= $user[$key]["users_email"]; ?></td>
                                             <td><?= $user[$key]["users_contactNumber"]; ?></td>
                                             <td><?= $user[$key]["user_role"]; ?></td>
-                                            <td> <a href="/role">Modifier</a> </td>
-                                            <td> Suprimer </td>
+                                            <td>
+                                                <a href="/Users/edit?idUser=<?php echo $user['id']; ?>"><span>Modifier</span></a>
+                                            </td>
+                                            <!-- Pour chaque entrée je realise des actions de suppression -->
+                                            <td>
+                                                <a href="/RegisterController/deleteUser?id=<?php echo $user['id'] ;?>">
+                                                    <span class="">Supprimer</span>
+                                                </a>
+                                            </td>
                                         </tr>
                                     <?php
                                         }
@@ -55,56 +60,10 @@
 
                                 </tbody>
                             </table>
+                            <a class="title right-title" href="/Users/accueil"><span class="glyphicon glyphicon-plus"></span>Aller sur le site</a>
                             </div>
 
                         </div>
-
-                        <div class="summary">
-                            <div class="summary__card">
-                                <div class="summary__single">
-                                    <span class="ti-id-badge"></span>
-                                    <div>
-                                        <h5>278</h5>
-                                        <small>INSCRIT</small>
-                                    </div>
-                                </div>
-
-                                <div class="summary__single">
-                                    <span class="ti-calendar"></span>
-                                    <div>
-                                        <h5>18</h5>
-                                        <small>Nombres de colaborateurs</small>
-                                    </div>
-                                </div>
-
-                                <div class="summary__single">
-                                    <span class="ti-face-smile"></span>
-                                    <div>
-                                        <h5>56</h5>
-                                        <small>Profile complet</small>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bday__card">
-                                <div class="bday__flex">
-                                    <div class="bday__img"></div>
-                                    <div class="bday__info">
-                                        <h5>ADIHOU tobi Rodrigues</h5>
-                                        <small>ADMIN</small>
-                                    </div>
-                                </div>
-
-                                <div class="text__center">
-                                    <button> 
-                                    <span class="ti-gift"></span>
-                                        voir plus
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
 
                 </section>
 
