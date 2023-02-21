@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 use App\Models\ReservationModel;
+
+
 use \Core\View;
 
 
@@ -16,6 +18,7 @@ class ReservationControllers {
     public $debut;
     public $fin;
     public $model;
+    public $userID;
 
     public function validationReservation() {
         if($this->emptyInput()=== "succes") {
@@ -62,14 +65,24 @@ class ReservationControllers {
   // Affichage de toutes les réservations enregistrées par l'utilisateur
 
   public function afficheReservation() {
-      session_start();
+    // session_start();
+    $_SESSION["user"] = $_POST['users_id'];
+    $this->id=$_SESSION["user"];
       $controllers = new ReservationModel();
-      $userID = $_SESSION["users_id"];
+      $resultatReservation = $controllers->afficheReservation($this->id);
+    echo '<pre>';
+
+    print_r($resultatReservation);
+    
+    echo '</pre>';
+    exit;
+
+    
+      // $userID = ;
       
-      $resultatReservation = $controllers->afficheReservation($userID);
-      $tabCount = $controllers->countReservationUser($userID);
-      $nbrReservation = $tabCount["countR"]; 
-      require_once('../App/Views/Users/afficheReservation.php');
+      // $tabCount = $controllers->countReservationUser($userID);
+      // $nbrReservation = $tabCount["countR"]; 
+      // require_once('App/Views/User/reservation/afficheReservation.phtml');
   }
   
 

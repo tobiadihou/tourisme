@@ -5,6 +5,7 @@ namespace App\Controllers;
 use \Core\View;
 
 
+
 class UsersControllers extends \Core\Controller {
   public $controller;
   
@@ -119,23 +120,21 @@ class UsersControllers extends \Core\Controller {
     // echo "Hello from the index action in the Home controller";
     View::render("User/reservation/reservation.phtml");
   }
-  public function afficheReservation() {
-    // echo "Hello from the index action in the Home controller";
+  public function afficheReservationAction() {
+    echo "Hello from the index action in the Home controller";
     View::render("User/reservation/afficheReservation.phtml");
   }
-  public function notification() {
+  public function notificationAction() {
     // echo "Hello from the index action in the Home controller";
     View::render("User/reservation/notification.phtml");
   }
 
   public function profilAction() {
-   
-   
-    // $controller = new LoginControllers($email, $password);
-    // $info=  $controller->verifyControl();
 
     View::render("user/Profil/profil.phtml");
   }
+
+
    /**
    * Before filter
    * 

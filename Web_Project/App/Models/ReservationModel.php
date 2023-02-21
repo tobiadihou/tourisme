@@ -3,7 +3,6 @@
     namespace App\Models;
 
     use App\Models\ConnexionsModels;
-
     /**
      * send reservation in database
      * @return void
@@ -62,7 +61,7 @@
     {
         $userID = $this->id;
         $conn = $this->connect();
-        $sql =  "SELECT * FROM site_touristique.reservation WHERE user_id = ? ";
+        $sql =  "SELECT * FROM site_touristique.reservation WHERE users_id = ? ";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$this->id]);
         return $stmt;
